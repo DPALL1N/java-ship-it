@@ -1,8 +1,9 @@
 package ru.yandex.practicum.delivery;
 
-public class PerishableParcel extends Parcel{
+public class PerishableParcel extends Parcel {
 
     int timeToLive;
+    int baseSumPerishableParcel = 4;
 
     public PerishableParcel(String description, int weight, String deliveryAddress, int sendDay, int timeToLive) {
         super(description, weight, deliveryAddress, sendDay);
@@ -12,13 +13,10 @@ public class PerishableParcel extends Parcel{
 
     @Override
     int getBaseSumParcel() {
-        return Parcel.baseSumPerishableParcel;
+        return baseSumPerishableParcel;
     }
 
     public boolean isExpired(int currentDay) {
-        if (sendDay + timeToLive <= currentDay)
-            return true;
-        else
-            return false;
+        return sendDay + timeToLive <= currentDay;
     }
 }

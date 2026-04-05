@@ -118,7 +118,7 @@ public class DeliveryApp {
 
     private static void reportStatus() {
         for (Trackable trackable : trackableParcels) {
-            System.out.println("Введите новое местоположение для \"" + trackable.getIdentifier() + "\": ");
+            System.out.println("Введите новое местоположение для \"" + trackable.getDescription() + "\": ");
             String newStatus = scanner.nextLine();
             trackable.reportStatus(newStatus);
         }

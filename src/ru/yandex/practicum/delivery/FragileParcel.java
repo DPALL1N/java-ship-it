@@ -1,6 +1,9 @@
 package ru.yandex.practicum.delivery;
 
 public class FragileParcel extends Parcel implements Trackable{
+
+    int baseSumFragileParcel = 3;
+
     public FragileParcel(String description, int weight, String deliveryAddress, int sendDay) {
         super(description, weight, deliveryAddress, sendDay);
     }
@@ -13,7 +16,7 @@ public class FragileParcel extends Parcel implements Trackable{
 
     @Override
     int getBaseSumParcel() {
-        return Parcel.baseSumFragileParcel;
+        return baseSumFragileParcel;
     }
 
 
@@ -22,8 +25,4 @@ public class FragileParcel extends Parcel implements Trackable{
         System.out.println("Хрупкая посылка " + description + " изменила местоположение на " + newLocation);
     }
 
-    @Override
-    public String getIdentifier() {
-        return description;
-    }
 }

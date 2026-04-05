@@ -6,9 +6,6 @@ public abstract class Parcel {
     protected String deliveryAddress;
     protected int sendDay;
 
-    static int baseSumStandardParcel = 5;
-    static int baseSumPerishableParcel = 4;
-    static int baseSumFragileParcel = 3;
 
     public Parcel(String description, int weight, String deliveryAddress, int sendDay) {
         this.description = description;
@@ -34,6 +31,10 @@ public abstract class Parcel {
     @Override
     public String toString() {
         return "Посылка: " + description + ", вес: " + weight + ", адрес: " + deliveryAddress + ", день отправления: " + sendDay;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
 
